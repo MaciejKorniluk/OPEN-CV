@@ -1,0 +1,32 @@
+Dokumentacja programu OCR – rozpoznawanie napisu na zdjęciu
+Opis programu
+Program służy do automatycznego rozpoznawania tekstu na zdjęciu przy pomocy technologii OCR (Optical Character Recognition).
+Jego zadaniem jest sprawdzenie, czy na obrazie znajduje się napis.
+Jeśli tak, program zaznacza go zieloną ramką i wyświetla przetworzone zdjęcie w oknie.
+Użyte biblioteki
+cv2 (OpenCV) – biblioteka do przetwarzania obrazu. Umożliwia wczytanie zdjęcia, zmianę jego formatu, rozmycie, progowanie i rysowanie kształtów.
+pytesseract – nakładka na program Tesseract OCR, która pozwala odczytywać tekst ze zdjęć bezpośrednio w Pythonie.
+Wymagania
+Aby program działał poprawnie, trzeba mieć zainstalowany:
+Python (np. wersja 3.10 lub nowsza),
+biblioteki opencv-python i pytesseract,
+program Tesseract OCR (na Windowsie trzeba wskazać jego ścieżkę, np. C:\Program Files\Tesseract-OCR\tesseract.exe).
+Zasada działania
+Wczytanie obrazu – program pobiera zdjęcie produktu z pliku.
+Jeśli obraz nie zostanie znaleziony, wyświetla komunikat o błędzie i kończy działanie.
+Przetwarzanie obrazu – zdjęcie jest zamieniane na odcienie szarości, rozmywane i progowane, aby poprawić jakość odczytu tekstu.
+Rozpoznawanie tekstu (OCR) – biblioteka pytesseract odczytuje tekst z obrazu i zapisuje go w postaci listy słów wraz z ich pozycjami na zdjęciu.
+Porównanie z szukaną frazą – program sprawdza, czy wśród odczytanych słów znajduje się „lipton”.
+Jeśli tak, zapamiętuje pozycję napisu.
+Zaznaczenie wyniku – po wykryciu słowa program rysuje zieloną ramkę wokół napisu i wyświetla obraz w osobnym oknie.
+Wyświetlenie informacji – jeśli słowo zostanie znalezione, w konsoli pojawi się komunikat np „Znaleziono frazę: lipton”.
+W przeciwnym razie program wypisze np: „Nie znaleziono pełnej frazy: lipton”.
+Zastosowanie
+Program można wykorzystać np. do:
+rozpoznawania marek lub nazw produktów na zdjęciach,
+analizowania etykiet,
+tworzenia prostych systemów wyszukiwania tekstu w obrazach.
+Podsumowanie
+Program demonstruje podstawowe użycie technologii OCR w Pythonie.
+Wykorzystuje OpenCV do przygotowania obrazu i Tesseract OCR do odczytu tekstu.
+Dzięki temu można łatwo sprawdzić, czy dany napis znajduje się na fotografii.
