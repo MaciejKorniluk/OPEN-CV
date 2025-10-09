@@ -1,0 +1,34 @@
+Dokumentacja programu – wykrywanie monet na zdjęciu
+
+Opis programu
+Program służy do automatycznego wykrywania monet na zdjęciu przy pomocy metody Hougha, która rozpoznaje kształty okręgów.
+Po znalezieniu monet program rysuje na nich zielone okręgi oraz czerwone punkty w ich środku.
+Na koniec wyświetla obraz z zaznaczonymi monetami i informuje użytkownika, ile monet zostało znalezionych.
+
+Użyte biblioteki
+cv2 (OpenCV) – biblioteka do przetwarzania obrazów, umożliwia wczytywanie zdjęć, konwersję kolorów, rozmycie i wykrywanie kształtów.
+numpy (np) – biblioteka do obliczeń numerycznych, wykorzystywana m.in. do operacji na tablicach danych.
+
+Wymagania
+Aby program działał poprawnie, należy mieć zainstalowane:
+Python (np. wersja 3.10 lub nowsza),
+biblioteki opencv-python i numpy,
+zdjęcie o nazwie monety.jpg znajdujące się w folderze ../OPEN-CV/photos/.
+
+Zasada działania
+Wczytanie obrazu – program ładuje zdjęcie z pliku.
+Jeśli plik nie zostanie znaleziony, wyświetla komunikat błędu i kończy działanie.
+Utworzenie kopii obrazu – tworzona jest kopia zdjęcia, aby można było na niej rysować wykryte monety bez zmiany oryginału.
+Przetwarzanie obrazu – zdjęcie jest zamieniane na odcienie szarości i rozmywane filtrem medianowym, co pozwala usunąć zakłócenia i ułatwia wykrycie okręgów.
+Wykrywanie monet – przy pomocy funkcji HoughCircles program analizuje obraz i wyszukuje kształty przypominające okręgi w określonym zakresie promieni.
+Parametry funkcji kontrolują dokładność, czułość oraz odległość między wykrywanymi monetami.
+Rysowanie wyników – jeśli monety zostaną wykryte, program:
+wyświetla w konsoli liczbę znalezionych monet,
+rysuje zielony okrąg wokół każdej monety,
+zaznacza środek każdej monety czerwonym punktem.
+Jeśli nie zostanie wykryta żadna moneta, pojawia się komunikat: „Nie znaleziono żadnych monet.”
+Wyświetlenie efektu – program pokazuje w oknie przetworzony obraz z zaznaczonymi monetami i czeka na zamknięcie okna przez użytkownika.
+
+Zastosowanie
+Program może być wykorzystany do analizy zdjęć zawierających obiekty o kształcie okręgu, np. monety, guziki lub inne okrągłe przedmioty.
+Jest to prosty przykład użycia metody Hougha w praktycznym zastosowaniu z wykorzystaniem biblioteki OpenCV.
